@@ -1,1 +1,39 @@
-{     "devDependencies": {         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-hubot-slack",     "homepage": "https://github.com/npmtest/node-npmtest-hubot-slack",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-hubot-slack.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### basic test coverage for  [hubot-slack (v4.3.4)](https://github.com/slackapi/hubot-slack#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-hubot-slack.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-hubot-slack) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-hubot-slack.svg)](https://travis-ci.org/npmtest/node-npmtest-hubot-slack)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-hubot-slack",
+    "keywords": [
+        "coverage",
+        "test",
+        "hubot-slack"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_hubot_slack.js",
+    "name": "npmtest-hubot-slack",
+    "nameAlias": "npmtest_hubot_slack",
+    "nameOriginal": "npmtest-hubot-slack",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-hubot-slack.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
